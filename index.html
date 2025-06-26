@@ -1,19 +1,20 @@
-<!DOCTYPE html><html lang="id" class="dark">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pembayaran</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://files.catbox.moe/81v0q2.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex items-center justify-center p-4">
-  <div id="app" class="w-full max-w-md">
-    <!-- Toggle Tema -->
-    <div class="flex justify-end mb-4">
-      <button onclick="toggleTheme()" class="text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded">Ganti Tema</button>
-    </div><!-- Notifikasi -->
-<div id="notif" class="hidden mb-4 p-2 rounded text-center text-white bg-green-600">Pembayaran Berhasil!</div>
-
-<!-- Halaman Awal -->
+<body class="text-white min-h-screen flex items-center justify-center p-4" style="backdrop-filter: brightness(0.9)">
+  <div id="app" class="w-full max-w-md bg-black bg-opacity-60 p-6 rounded-xl">
+    <!-- Notifikasi -->
+    <div id="notif" class="hidden mb-4 p-2 rounded text-center text-white bg-green-600">Pembayaran Berhasil!</div><!-- Halaman Awal -->
 <div id="home" class="space-y-6 text-center">
   <h1 class="text-2xl font-bold">Pilih Metode Pembayaran</h1>
   <button onclick="showDana()" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl">Bayar via Nomor DANA</button>
@@ -24,10 +25,10 @@
 <div id="danaForm" class="hidden space-y-4">
   <h2 class="text-xl font-semibold">Bayar via Nomor DANA</h2>
   <div class="flex gap-2">
-    <input id="danaNumber" type="text" value="081278983490" readonly class="w-full p-2 border rounded dark:bg-gray-800 bg-gray-100 text-gray-700" />
+    <input id="danaNumber" type="text" value="081278983490" readonly class="w-full p-2 border rounded bg-gray-100 text-gray-700" />
     <button onclick="copyDana()" class="bg-blue-500 hover:bg-blue-600 text-white px-3 rounded">Salin</button>
   </div>
-  <input type="number" placeholder="Jumlah Pembayaran" class="w-full p-2 border rounded dark:bg-gray-800" />
+  <input type="number" placeholder="Jumlah Pembayaran" class="w-full p-2 border rounded bg-white text-black" />
   <div class="flex justify-between">
     <button onclick="kembali()" class="py-2 px-4 bg-gray-600 hover:bg-gray-700 text-white rounded">Kembali</button>
     <button onclick="bayar()" class="py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded">Bayar Sekarang</button>
@@ -66,9 +67,6 @@
       navigator.clipboard.writeText(danaInput.value).then(() => {
         alert('Nomor DANA disalin!');
       });
-    }
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
     }
   </script></body>
 </html>
